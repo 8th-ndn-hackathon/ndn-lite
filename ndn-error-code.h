@@ -26,14 +26,14 @@
  * @{ */
 
 /** The object given is larger than expected.
- * 
+ *
  * This error can be caused by multiple reasons. Generally caused by an input parameter
  * whose size is larger than the corresponding value defined in ndn-constants.h.
  */
 #define NDN_OVERSIZE -10
 
 /** The format of the name string specified is invalid.
- * 
+ *
  * A uri string of a name should start with "/".
  */
 #define NDN_NAME_INVALID_FORMAT -11
@@ -43,7 +43,7 @@
 #define NDN_WRONG_TLV_TYPE -12
 
 /** The Length specified differs from expected.
- * 
+ *
  * This can be due to one of the following reasons:
  *  - The input Length for a TLV block is not 1, 2, 4 or 8, as the Spec requires.
  *  - The Type of the TLV block given requires a fixed Length different from the Length it has.
@@ -51,13 +51,13 @@
 #define NDN_WRONG_TLV_LENGTH -13
 
 /** The buffer given is insufficient.
- * 
+ *
  * The operation specified requires more memory than the buffer variable given.
  */
 #define NDN_OVERSIZE_VAR -14
 
 /** The operation faild due to specific reason.
- * 
+ *
  * Reserved. See the function called.
  */
 #define NDN_TLV_OP_FAILED -15
