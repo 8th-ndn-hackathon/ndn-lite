@@ -250,9 +250,9 @@ ndn_forwarder_on_incoming_interest(ndn_forwarder_t* self, ndn_face_intf_t* face,
   ret = forwarder_multicast_strategy(face, name, raw_interest, size, pit_entry);
 
   // Reject PIT
-  if (ret != 0) {
-    pit_entry_delete(pit_entry);
-  }
+  //if (ret != 0) {
+  //  pit_entry_delete(pit_entry);
+  //}
 
   // Free memory
   if (!bypass) {
