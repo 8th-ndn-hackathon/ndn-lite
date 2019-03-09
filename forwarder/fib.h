@@ -30,7 +30,7 @@ typedef struct ndn_fib_entry {
    * The name prefix.
    * A name with <tt> ndn_name_t#components_size < 0 </tt> indicates an empty entry.
    */
-  ndn_name_t name_prefix;
+  ndn_buffer_t name_buffer;
 
   /**
    * The next-hop record.

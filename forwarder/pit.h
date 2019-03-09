@@ -30,7 +30,7 @@ typedef struct ndn_pit_entry {
    * The name of representative Interest.
    * A name with components_size < 0 indicates an empty entry.
    */
-  ndn_name_t interest_name;
+  ndn_buffer_t interest_buffer;
 
   /**
    * Collection of incoming faces.
