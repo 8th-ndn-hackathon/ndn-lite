@@ -580,7 +580,7 @@ ndn_data_set_encrypted_content(ndn_data_t* data,
                       encoder.output_max_size - encoder.offset,
                       aes_iv, key);
   if (ret_val != NDN_SUCCESS) return ret_val;
-  encoder.offset += data->content_size + NDN_AES_BLOCK_SIZE;
+  encoder.offset += content_size + NDN_AES_BLOCK_SIZE;
   data->content_size = encoder.offset;
   return 0;
 }
