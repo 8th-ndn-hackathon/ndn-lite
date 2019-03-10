@@ -126,7 +126,8 @@ ndn_name_compare(const ndn_name_t* lhs, const ndn_name_t* rhs);
  */
 int
 ndn_name_compare_sub_names(const ndn_name_t* lhs, int lhs_b, int lhs_e,
-			   const ndn_name_t* rhs, int rhs_b, int rhs_e);
+                           const ndn_name_t* rhs, int rhs_b, int rhs_e);
+
 
 /**
  * Compare two Name based on the canonical order, to see whether a name is the prefix
