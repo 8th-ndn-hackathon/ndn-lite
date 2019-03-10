@@ -70,7 +70,7 @@ ndn_direct_face_send(struct ndn_face_intf* self, const ndn_name_t* name,
 
   for (int i = 0; i < NDN_DIRECT_FACE_CB_ENTRY_SIZE; i++) {
     if (direct_face.cb_entries[i].is_prefix == isInterest && isInterest == 0
-        && ndn_name_compare(&direct_face.cb_entries[i].interest_name, name) == 0) {
+        && ndn_name_is_prefix_of(&direct_face.cb_entries[i].interest_name, name) == 0) {
       direct_face.cb_entries[i].on_data(packet, size);
       return 0;
     }
