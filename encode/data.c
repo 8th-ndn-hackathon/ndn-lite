@@ -547,6 +547,7 @@ ndn_data_set_encrypted_content(ndn_data_t* data,
 
   // prepare output block
   memset(data->content_value, 0, NDN_CONTENT_BUFFER_SIZE);
+  data->content_size = 0;
 
   ndn_encoder_t encoder;
   encoder_init(&encoder, data->content_value, NDN_CONTENT_BUFFER_SIZE);
