@@ -76,12 +76,22 @@ fib_table_init(void)
 static ndn_fib_entry_t*
 fib_table_find(const ndn_name_t* name)
 {
+  int ret = -1;
   for (uint8_t i = 0; i < NDN_FIB_MAX_SIZE; i++) {
     if (ndn_name_is_prefix_of(&instance.fib[i].name_prefix, name) == 0) {
-      return &instance.fib[i];
+      //return &instance.fib[i];
+      if(ret == -1){
+        ret = i;
+      }else if(instance.fib[ret].name_prefix.components_size < instance.fib[i].name_prefix.components_size){
+        ret = i;
+      }
     }
   }
-  return NULL;
+  if(ret == -1){
+    return NULL;
+  }else{
+    return &instance.fib[ret];
+  }
 }
 
 // static ndn_fib_entry_t*

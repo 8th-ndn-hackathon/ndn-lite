@@ -107,6 +107,12 @@ ndn_direct_face_express_interest(const ndn_name_t* interest_name,
                                  uint8_t* interest, uint32_t interest_size,
                                  ndn_on_data_callback on_data, ndn_interest_timeout_callback on_interest_timeout)
 {
+  // TODO: Fix this after hackathon
+  if(on_data == NULL && on_interest_timeout == NULL){
+    ndn_forwarder_on_incoming_interest(ndn_forwarder_get_instance(), &direct_face.intf, interest_name, interest, interest_size);
+    return 0;
+  }
+
   for (int i = 0; i < NDN_DIRECT_FACE_CB_ENTRY_SIZE; i++) {
     if (direct_face.cb_entries[i].interest_name.components_size == NDN_FWD_INVALID_NAME_SIZE) {
       direct_face.cb_entries[i].interest_name = *interest_name;

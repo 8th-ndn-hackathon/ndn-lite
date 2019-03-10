@@ -170,6 +170,9 @@ ndn_sd_on_query_response_process(const ndn_data_t * response);
 int
 ndn_sd_on_query_timeout_process(const ndn_interest_t* interest);
 
+ndn_sd_context_t*
+ndn_sd_get_sd_context();
+
 #ifdef __cplusplus
 }
 #endif

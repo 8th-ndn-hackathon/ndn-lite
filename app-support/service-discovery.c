@@ -312,3 +312,9 @@ ndn_sd_on_query_timeout_process(const ndn_interest_t* interest)
   _neighbors_remove_neighbor(&interest->name.components[home_len + 1]);
   return 0;
 }
+
+// TODO: Fix this solution
+ndn_sd_context_t*
+ndn_sd_get_sd_context(){
+  return &sd_context;
+}
